@@ -1,0 +1,141 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\title{Assignment3}
+\author{Swapnil Sirsat}
+\date{January 2021}
+
+\begin{document}
+
+\maketitle
+
+\section*{Question: }
+Find the QR decomposition of\\
+$A$ = \begin{pmatrix} 8 & 5 \\ 3 & 2\\ \end{pmatrix} \\
+\section*{Solution: }
+The QR decomposition of a matrix is
+a decomposition of the matrix into an orthogonal matrix and an upper triangular matrix. A
+QR decomposition of a real square matrix $A$ is
+a decomposition of $A$ as 
+\begin{equation}
+    \textbf{A = QR}
+\end{equation}
+where Q is an orthogonal matrix and R is an
+upper triangular matrix \\
+Given, \\
+\begin{equation}
+    A = \begin{pmatrix} 8 & 5 \\ 3 & 2\\ \end{pmatrix}
+\end{equation}
+Let a and b be the column vectors of the given
+matrix \\
+\begin{align}
+    a = \begin{pmatrix} 8 \\ 3 \end{pmatrix}\\
+    b = \begin{pmatrix} 5 \\ 2 \end{pmatrix}
+\end{align}
+The above column vectors can be expressed as \\
+\begin{gather}
+    a = t_1u_1 \\
+    b = s_1u_1 + t_2u_2
+\end{gather}
+where, \\
+\begin{gather}
+    t_1 = ||a||\\
+    u_1 = \frac{a}{t_1}\\
+    s_1 = \frac{u_1^{T}b}{||u_1||^{2}}\\
+    u_2 = \frac{b-s_1u_1}{||b-s_1u_1||}\\
+    t_2 = u_2^{T}b
+\end{gather}
+the equation (5) and (6) can be written as \\
+\begin{gather}
+    \begin{pmatrix} a & b \end{pmatrix} = \begin{pmatrix} u_1 & u_2 \end{pmatrix} \begin{pmatrix}  t_1 & s_1 \\ 0 & t_2 \end{pmatrix}\\
+    \begin{pmatrix} a & b \end{pmatrix} = QR
+\end{gather}
+Here, R is an upper triangular matrix and Q is
+an orthogonal matrix such that \\ 
+\begin{equation}
+    Q^{T}Q = I
+\end{equation}
+Now, using equation (7) to (11) we get,
+\begin{gather}
+    t_1 = \sqrt{8^{2} + 3^{2}} = \sqrt{73} \\
+    u_1 = \frac{1}{\sqrt{73}}\begin{pmatrix} 8 \\ 3 \end{pmatrix} \\
+    s_1 = \begin{pmatrix} \frac{8}{\sqrt{73}} & \frac{3}{\sqrt{73}} \end{pmatrix}\begin{pmatrix} 5 \\ 2 \end{pmatrix} = \frac{46}{\sqrt{73}}\\
+    u_2 = \frac{1}{\sqrt{73}}\begin{pmatrix}-3 \\ 8  \end{pmatrix}\\
+    t_2 = \begin{pmatrix} \frac{-3}{\sqrt{73}}  & \frac{8}{\sqrt{73}}\end{pmatrix} \begin{pmatrix} 5 \\ 2 \end{pmatrix} = \frac{1}{\sqrt{73}}
+\end{gather}
+Substituting all these values into equation (12), \\
+We obtain the QR decomposition as
+\begin{align}
+    A = \begin{pmatrix}
+    \frac{8}{\sqrt{73}} & \frac{-3}{\sqrt{73}} \\ \frac{3}{\sqrt{73}} & \frac{8}{\sqrt{73}}
+    \end{pmatrix} 
+    \begin{pmatrix}
+    \sqrt{73} & \frac{46}{\sqrt{73}} \\ 0 & \frac{1}{\sqrt{73}}
+    \end{pmatrix}
+\end{align}
+\newpage
+\section*{Question: }
+Find the QR decomposition of\\
+$A$ = \begin{pmatrix} 2 & 5 \\ 1 & 4\\ \end{pmatrix} \\
+\section*{Solution: }
+QR decomposition of a square matrix is given by,
+\begin{equation}
+    \textbf{A = QR}
+\end{equation}
+where Q is an orthogonal matrix and R is an
+upper triangular matrix. \\
+Given matrix,\\
+\begin{align}
+    A = \begin{pmatrix}
+    2 & 5 \\ 1 & 4\\
+    \end{pmatrix}
+\end{align}
+The column vectors of the matrix is given by, \\
+\begin{align}
+    a = \begin{pmatrix}
+    2 \\ 1 \\
+    \end{pmatrix} 
+    b = \begin{pmatrix}
+    5 \\ 4\\
+    \end{pmatrix}
+\end{align}
+Equation (22) can be written in form of
+(23) as, \\
+\begin{gather}
+    \begin{pmatrix}
+a & b
+\end{pmatrix} = \begin{pmatrix}
+q_1 & q_2
+\end{pmatrix}\begin{pmatrix}
+u_1 & u_3 \\ 0 & u_2 \\
+\end{pmatrix} = QR
+\end{gather}
+where,\\
+\begin{gather}
+    u_1 = ||a|| = \sqrt{2^{2}+ 1^{2}} = \sqrt{5}\\
+    q_1 = \frac{a}{u_1} = \begin{pmatrix} \frac{2}{\sqrt{5}} \\ \frac{1}{\sqrt{5}}\end{pmatrix} \\
+    u_3 = \frac{q_1^{T}b}{||q_1||^{2}} = \begin{pmatrix}
+     \frac{2}{\sqrt{5}} & \frac{1}{\sqrt{5}}
+    \end{pmatrix}\begin{pmatrix}
+    5 \\ 4 \\
+    \end{pmatrix}= \frac{14}{\sqrt{5}}\\
+    q_2 = \frac{b-u_3q_1}{||b-u_3q_1||} =\frac{1}{\sqrt{5}} \begin{pmatrix}
+    -1 \\ 2
+    \end{pmatrix}\\
+    u_2 = q_2^{T}b = \frac{3}{\sqrt{5}}
+\end{gather}
+Substituting equation (25) to (29) in
+(24),\\
+we obtain the QR decomposition \\
+\begin{align}
+A = 
+    \begin{pmatrix}
+    \frac{2}{\sqrt{5}} & \frac{-1}{\sqrt{5}} \\ \frac{1}{\sqrt{5}} & \frac{2}{\sqrt{5}}
+    \end{pmatrix}\begin{pmatrix}
+    \sqrt{5} & \frac{14}{\sqrt{5}} \\ 0 &  \frac{3}{\sqrt{5}}
+    \end{pmatrix}
+\end{align}
+
+
+\end{document}
